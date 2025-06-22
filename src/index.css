@@ -1,0 +1,23 @@
+[data-theme="Light"] {
+  --bg-color: white;
+  --heading-color: black;
+  --text-color: black;
+}
+
+[data-theme="Dark"] {
+  --bg-color: #222;
+  --heading-color: white;
+  --text-color: #ddd;
+}
+
+h1 {
+  color: var(--heading-color);
+}
+
+body {
+  background-color: var(--bg-color);
+}
+
+p {
+  color: var(--text-color);
+}

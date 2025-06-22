@@ -1,0 +1,78 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  align-items: center;
+}
+
+.navbar {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 10px;
+}
+
+.navbar a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.nav-Light a {
+  color: #000;
+}
+
+.nav-Dark a {
+  color: #fff;
+}
+
+/* Toggle switch CSS*/
+/* Since we need a toggle switch that listens to state changes, we added an <input type="checkbox" />.
+This gives us the actual toggle logic — the browser knows when it’s checked or not.
+
+To design and style the toggle visually, we added a <label> around it.
+Labels let us associate clicks with the input, and provide a container to style.
+
+To get a rounded switch background, we added a .slider inside the label and applied styles to it.
+.slider becomes the visual track — rounded, colored, animated.
+
+We gave the <label> position: relative so the absolutely-positioned .slider can fill its bounds.
+Essential for absolute to work correctly.
+
+And we set the label to display: inline-block so we could define a fixed width and height.
+Because inline elements (default for <label>) can't have width/height applied. */
+
+.toggle-switch label {
+  display: inline-block;
+  position: relative;
+  width: 50px;
+  height: 20px;
+}
+
+.toggle-switch .slider {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: black;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+.toggle-switch input:checked + .slider {
+  background-color: #ccc;
+}
+
+.toggle-switch .slider:before {
+  position: absolute;
+  content: "";
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  transition: 0.5s;
+  background-color: aqua;
+}
+
+.toggle-switch input:checked + .slider::before {
+  transform: translateX(30px);
+}
